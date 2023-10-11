@@ -1,151 +1,240 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<body class="home">
-    <div class="container-fluid display-table">
-        <div class="row display-table-row">
-            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-                <div class="logo">
-                    <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!doctype html>
+<html>
+    <body>
+        
+        <!--===================
+        Header
+        =======================-->
+        <header class="header">
+            <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand p-0 mr-5" href="#"><img src="http://via.placeholder.com/61x14"></a>
+              <div class="float-left"> <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a> </div>
+              <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown messages-menu">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-bell-o"></i>
+                      <span class="label label-success bg-success">10</span>
                     </a>
-                </div>
-                <div class="navi">
-                    <ul>
-                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
-                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <ul class="dropdown-menu-over list-unstyled">
+                        <li class="header-ul text-center">You have 4 messages</li>
+                        <li>
+                          <!-- inner menu: contains the actual data -->
+                          <ul class="menu list-unstyled">
+                            <li><!-- start message -->
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="http://via.placeholder.com/160x160" class="rounded-circle  " alt="User Image">
+                              </div>
+                              <h4>
+                              Support Team
+                              <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>Why not buy a new awesome theme?</p>
+                            </a>
+                          </li>
+                          <!-- end message -->
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
+                              </div>
+                              <h4>
+                              AdminLTE Design Team
+                              <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                              </h4>
+                              <p>Why not buy a new awesome theme?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
+                              </div>
+                              <h4>
+                              Developers
+                              <small><i class="fa fa-clock-o"></i> Today</small>
+                              </h4>
+                              <p>Why not buy a new awesome theme?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
+                              </div>
+                              <h4>
+                              Sales Department
+                              <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                              </h4>
+                              <p>Why not buy a new awesome theme?</p>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <div class="pull-left">
+                                <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
+                              </div>
+                              <h4>
+                              Reviewers
+                              <small><i class="fa fa-clock-o"></i> 2 days</small>
+                              </h4>
+                              <p>Why not buy a new awesome theme?</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer-ul text-center"><a href="#">See All Messages</a></li>
                     </ul>
-                </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown notifications-menu">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="label label-warning bg-warning">10</span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-menu-over list-unstyled">
+                      <li class="header-ul text-center">You have 10 notifications</li>
+                      <li>
+                        <!-- inner menu: contains the actual data -->
+                        <ul class="menu list-unstyled">
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                              page and may cause design problems
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-users text-red"></i> 5 new members joined
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fa fa-user text-red"></i> You changed your username
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer-ul text-center"><a href="#">View all</a></li>
+                    </ul>
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown  user-menu">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="http://via.placeholder.com/160x160" class="user-image" alt="User Image" >
+                    <span class="hidden-xs">bootstrap develop</span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="col-md-10 col-sm-11 display-table-cell v-align">
-                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
-                <div class="row">
-                    <header>
-                        <div class="col-md-7">
-                            <nav class="navbar-default pull-left">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                            </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="header-rightside">
-                                <ul class="list-inline header-top pull-right">
-                                    <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li>
-                                        <a href="#" class="icon-info">
-                                            <i class="fa fa-bell" aria-hidden="true"></i>
-                                            <span class="label label-primary">3</span>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
-                                            <b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <div class="navbar-content">
-                                                    <span>JS Krishna</span>
-                                                    <p class="text-muted small">
-                                                        me@jskrishna.com
-                                                    </p>
-                                                    <div class="divider">
-                                                    </div>
-                                                    <a href="#" class="view btn-sm active">View Profile</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </header>
+          </nav>
+        </header>
+        <div class="main">
+          <aside>
+            <div class="sidebar left ">
+              <div class="user-panel">
+                <div class="pull-left image">
+                  <img src="http://via.placeholder.com/160x160" class="rounded-circle" alt="User Image">
                 </div>
-                <div class="user-dashboard">
-                    <h1>Hello, JS</h1>
-                    <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
-
-                            <div class="sales">
-                                <h2>Your Sale</h2>
-
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12 gutter">
-
-                            <div class="sales report">
-                                <h2>Report</h2>
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="pull-left info">
+                  <p>Digital Support</p>
+                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
-            </div>
-        </div>
+              </div>
+              <ul class="list-sidebar bg-defoult">
+                <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                <ul class="sub-menu collapse" id="dashboard">
+                  <li class="active"><a href="#">CSS3 Animation</a></li>
+                  <li><a href="#">General</a></li>
+                  <li><a href="#">Buttons</a></li>
+                  <li><a href="#">Tabs & Accordions</a></li>
+                  <li><a href="#">Typography</a></li>
+                  <li><a href="#">FontAwesome</a></li>
+                  <li><a href="#">Slider</a></li>
+                  <li><a href="#">Panels</a></li>
+                  <li><a href="#">Widgets</a></li>
+                  <li><a href="#">Bootstrap Model</a></li>
+                </ul>
+              </li>
+              <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
+              <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+              <ul class="sub-menu collapse" id="products">
+                <li class="active"><a href="#">CSS3 Animation</a></li>
+                <li><a href="#">General</a></li>
+                <li><a href="#">Buttons</a></li>
+                <li><a href="#">Tabs & Accordions</a></li>
+                <li><a href="#">Typography</a></li>
+                <li><a href="#">FontAwesome</a></li>
+                <li><a href="#">Slider</a></li>
+                <li><a href="#">Panels</a></li>
+                <li><a href="#">Widgets</a></li>
+                <li><a href="#">Bootstrap Model</a></li>
+              </ul>
+            </li>
+            <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
+            <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
+            <ul  class="sub-menu collapse" id="tables" >
+              <li><a href=""> Static Tables</a></li>
+              <li><a href=""> Data Tables</a></li>
+              <li><a href=""> Foo Tables</a></li>
+              <li><a href=""> jqGrid</a></li>
+            </ul>
+          </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
+          <ul  class="sub-menu collapse" id="e-commerce" >
+            <li><a href=""> Products grid</a></li>
+            <li><a href=""> Products list</a></li>
+            <li><a href="">Product edit</a></li>
+            <li><a href=""> Product detail</a></li>
+            <li><a href="">Cart</a></li>
+            <li><a href=""> Orders</a></li>
+            <li><a href=""> Credit Card form</a> </li>
+          </ul>
+        </li>
+        <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
+        <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+        <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+        <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+        <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+        <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+      </ul>
+      </div>
+      </aside>
+      </div>
+    
 
-    </div>
 
 
-
-    <!-- Modal -->
-    <div id="add_project" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header login-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Add Project</h4>
-                </div>
-                <div class="modal-body">
-                            <input type="text" placeholder="Project Title" name="name">
-                            <input type="text" placeholder="Post of Post" name="mail">
-                            <input type="text" placeholder="Author" name="passsword">
-                            <textarea placeholder="Desicrption"></textarea>
-                    </div>
-                <div class="modal-footer">
-                    <button type="button" class="cancel" data-dismiss="modal">Close</button>
-                    <button type="button" class="add-project" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</body>
+    </body>
+</html>
