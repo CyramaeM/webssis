@@ -14,6 +14,16 @@
     <link href="static/css/dashboard.css" rel="stylesheet">
     <script src="dashboard.js"></script>
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="static/css/student.css" rel="stylesheet">
+
 
   </head>
     <body>
@@ -30,22 +40,129 @@
                 </div>
               </div>
               <ul class="list-sidebar bg-defoult">
-              <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">Profile</span><span class="fa fa-chevron-left pull-right"></span></a>
+              <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-user-o" aria-hidden="true"></i> <span class="nav-label">Profile</span><span class="fa fa-chevron-left pull-right"></span></a>
                 <ul  class="sub-menu collapse" id="e-commerce" >
                   <li><a href=""> EDIT PROFILE</a></li>
                   <li><a href=""> LOGOUT</a></li>
                 </ul>
               </li>
 
-                <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Student </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                <li> <a href="/add student" data-toggle="collapse" data-target="#dashboard" class="collapsed active" ><i class="fa fa-graduation-cap" aria-hidden="true"></i></i> <span class="nav-label"> Student </span> <span class="fa fa-chevron-left pull-right"></span> </a>
                 <ul class="sub-menu collapse" id="dashboard">
-                  <li><a href="#">ADD</a></li>
+                  <li> <a href="#registrationModal" data-toggle="modal"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label"> ADD </span></a>
+                    <!-- Modal for Registration Form -->
+                  <div class="modal fade" id="registrationModal" tabindex="1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="registrationModalLabel">Registration Form</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="container">
+                                <form method="get" >
+                                 <div class="row ">
+                                  <!--- For id number---->
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                          <div class="col-xs-4">
+                                                    <label class="ID">ID number :</label> </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" name="stu_id" id="stu_id" placeholder="Enter your ID number" class="form-control ">
+                                            </div>
+                                         </div>
+                                    </div>
+                                        <div class="col-sm-12">
+                                        <div class="row">
+                                          <div class="col-xs-4">
+                                                    <label class="firstname">First Name :</label></div>
+                                       <div class ="col-xs-8">	 
+                                                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control">
+                                               </div>
+                                        </div>
+                                    </div>
+                                    <!-----For last name---->
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                          <div class="col-xs-4">
+                                                <label class="lastname" >Last name:</label></div>
+                                          <div class="col-xs-8"	>	 
+                                               <input type="text" name="lname"  id="lname" placeholder="Enter your Last name" class="form-control" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                  <!-----Course---->
+                                       <div class="col-sm-12">
+                                           <div class="row">
+                                               <div class="col-xs-4">
+                                                   <label class="Course">Course:</label>
+                                               </div>
+                                               <div class="col-xs-8">
+                                                   <select name="Course" id="Course" class="form-control">
+                                                       <option value="">Select your Course</option>
+                                                       <option value="Course A">Course A</option>
+                                                       <option value="Course B">Course B</option>
+                                                       <option value="Course C">Course C</option>
+                                                       <!-- Add more options as needed -->
+                                                   </select>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <label class="yearlevel">Year Level:</label>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <select name="yearlevel" id="yearlevel" class="form-control">
+                                                    <option value="">Select your Year level</option>
+                                                    <option value="Course A">1st year</option>
+                                                    <option value="Course B">2nd year</option>
+                                                    <option value="Course C">3rd year</option>
+                                                    <option value="Course C">4th year</option>
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <!-----------For gender-------->
+                                        <div class="col-sm-12">
+                                        <div class ="row">
+                                                <div class="col-xs-4 ">
+                                            <label class="gender">Gender:</label>
+                                        </div>
+                                      
+                                          <div class="col-xs-4 male">	 
+                                            <input type="radio" name="gender"  id="gender" value="boy">Male</input>
+                                        </div>
+                                        
+                                        <div class="col-xs-4 female">
+                                            <input type="radio"  name="gender" id="gender" value="girl" >Female</input>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>	 
+                               </div>
+                              </form>
+                                <!-- Your registration form content goes here -->
+                                <!-- Add your form inputs here -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                   <li><a href="#">DELETE</a></li>
                   <li><a href="#">EDIT</a></li>
                   <li><a href="#">LIST</a></li>
                 </ul>
               </li>
-              <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Course</span><span class="fa fa-chevron-left pull-right"></span></a>
+              <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-book" aria-hidden="true"></i></i> <span class="nav-label">Course</span><span class="fa fa-chevron-left pull-right"></span></a>
                 <ul  class="sub-menu collapse" id="tables" >
                   <li><a href="#">ADD</a></li>
                   <li><a href="#">DELETE</a></li>
@@ -53,7 +170,7 @@
                   <li><a href="#">LIST</a></li>
                 </ul>
               </li>
-              <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">College</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+              <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" ><i class="fa fa-building" aria-hidden="true"></i></i> <span class="nav-label">College</span> <span class="fa fa-chevron-left pull-right"></span> </a>
               <ul class="sub-menu collapse" id="products">
                 <li><a href="#">ADD</a></li>
                   <li><a href="#">DELETE</a></li>
@@ -63,8 +180,51 @@
             </li>
       </ul>
       </div>
-      </aside>
+    </aside>
+    <div class="table-responsive" id="sailorTableArea">
+      <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+        <thead>
+          <tr>
+              <th>ID number</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Course</th>
+              <th>Year level</th>
+              <th>Gender</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Tiger</td>
+              <td>Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+          </tr>
+          <tr>
+              <td>Garrett</td>
+              <td>Winters</td>
+              <td>Accountant</td>
+              <td>Tokyo</td>
+              <td>63</td>
+              <td>2011/07/25</td>
+          </tr>
+          <tr>
+              <td>Ashton</td>
+              <td>Cox</td>
+              <td>Junior Technical Author</td>
+              <td>San Francisco</td>
+              <td>66</td>
+              <td>2009/01/12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
       </div>
+      
+
       
 
 

@@ -1,0 +1,94 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="static/css/student.css" rel="stylesheet">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading"> Registration-Form</header><hr></hr>
+	<!---Form starting----> 
+	<div class="row ">
+	 <!--- For Name---->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label class="ID">ID number :</label> </div>
+		         <div class="col-xs-8">
+		             <input type="text" name="stu_id" id="stu_id" placeholder="Enter your ID number" class="form-control ">
+             </div>
+		      </div>
+		 </div>
+         <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+                     <label class="firstname">first Name :</label></div>
+				<div class ="col-xs-8">	 
+		             <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control">
+                </div>
+		     </div>
+		 </div>
+     <!-----For lst name---->
+		 <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+		             <label class="lastname" >last name:</label></div>
+			     <div class="col-xs-8"	>	 
+			          <input type="text" name="lname"  id="lname" placeholder="Enter your Last name" class="form-control" >
+		         </div>
+		     </div>
+		 </div>
+	 <!-----For course---->
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="Course">Course:</label>
+                </div>
+                <div class="col-xs-8">
+                    <select name="Course" id="Course" class="form-control">
+                        <option value="">Select your Course</option>
+                        <option value="College A">College A</option>
+                        <option value="College B">College B</option>
+                        <option value="College C">College C</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+        </div>
+		  
+     <!-----------For gender-------->
+         <div class="col-sm-12">
+		     <div class ="row">
+                 <div class="col-xs-4 ">
+			       <label class="gender">Gender:</label>
+				 </div>
+			 
+			     <div class="col-xs-4 male">	 
+				     <input type="radio" name="gender"  id="gender" value="boy">Male</input>
+				 </div>
+				 
+				 <div class="col-xs-4 female">
+				     <input type="radio"  name="gender" id="gender" value="girl" >Female</input>
+			     </div>
+			
+		  	 </div>
+		     <div class="col-sm-12">
+		         <div class="btn btn-warning">Submit</div>
+		   </div>
+		 </div>
+	 </div>	 
+		 		 
+		 
+</div>
+
+</body>		
+</html>
