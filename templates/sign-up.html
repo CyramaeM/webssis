@@ -1,16 +1,12 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!--
 <html>
     <body>
         <div class="span3">
             <h2>Sign Up</h2>
             <form>
-            <label>First Name</label>
-            <input type="text" name="firstname" class="span3">
-            <label>Last Name</label>
-            <input type="text" name="lastname" class="span3">
             <label>Email Address</label>
             <input type="email" name="email" class="span3">
             <label>Username</label>
@@ -23,4 +19,24 @@
         </div>
     </body>
     
-</html>
+</html>-->
+{% extends "sign-in.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="span3">
+        <h2>Sign Up</h2>
+        <form>
+        <label>Email Address</label>
+        <input type="email" name="email" class="span3">
+        <label>Username</label>
+        <input type="text" name="username" class="span3">
+        <label>Password</label>
+        <input type="password" name="password" class="span3">
+        <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+        <div class="clearfix"></div>
+        </form>
+    </div>
+</div>
+                 
+{% endblock %}
