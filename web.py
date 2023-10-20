@@ -330,6 +330,9 @@ def edit_course(id):
         except Exception as e:
             flash(f"Error retrieving course: {str(e)}", "error")
             return redirect(url_for('courselist'))
+        
+        
+        
 
 
 
