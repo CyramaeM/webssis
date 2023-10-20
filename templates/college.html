@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <!-- Registration Form -->
+    <form id="registrationForm" action="/add college" method="POST">
+        <!-- College Code -->
+        <div class="form-group">
+            <label for="college_code">College Code:</label>
+            <input type="text" name="college_code" id="college_code" placeholder="Enter College Code" class="form-control" required>
+            <span id="collegeCodeError" class="error"></span>
+        </div>
+
+        <!-- College Name -->
+        <div class="form-group">
+            <label for="college_name">College Name:</label>
+            <input type="text" name="college_name" id="college_name" placeholder="Enter College Name" class="form-control" required>
+            <span id="collegeNameError" class="error"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-warning" onclick="return validateForm();">Submit</button>
+    </form>
+</div>
+{% endblock %}

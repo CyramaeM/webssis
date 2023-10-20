@@ -1,58 +1,74 @@
 {% extends "index.html" %}
 {% block content %}
     <div class="container">
-        <header class="heading">Registration Form</header>
-        <hr>
-
+ 
         <!-- Registration Form -->
-        <form id="registrationForm" action="/submit-registration" method="POST">
+        <form id="registrationForm" action="/addstudent" method="POST">
             <!-- ID Number -->
             <div class="form-group">
-                <label for="stu_id">ID Number:</label>
-                <input type="text" name="stu_id" id="stu_id" placeholder="Enter your ID number" class="form-control">
+                <label for="stud_id">ID Number:</label>
+                <input type="text" name="stud_id" id="stud_id" placeholder="Enter your ID number" class="form-control" required>
+                <span id="idError" class="error"></span>
             </div>
 
             <!-- First Name -->
             <div class="form-group">
-                <label for="fname">First Name:</label>
-                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control">
+                <label for ="fname">First Name:</label>
+                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control" required>
+                <span id="fnameError" class "error"></span>
             </div>
 
             <!-- Last Name -->
             <div class="form-group">
                 <label for="lname">Last Name:</label>
-                <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control">
+                <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control" required>
+                <span id="lnameError" class="error"></span>
             </div>
-
+            
             <!-- Course Selection -->
             <div class="form-group">
-				<label for="course">Course:</label>
-				<select name="course" id="course" class="form-control">
-					<option value="">Select your Course</option>
-					{% for course in course %}
-						<option value="{{ course[0] }}">{{ course[0] }}</option>
-					{% endfor %}
-				</select>
-			</div>
-			
+                <label for="course">Course:</label>
+                <select name="course" id="course" class="form-control" required>
+                    <option value="">Select your Course</option>
+                    {% for row in course %}
+                    <option value="{{ row[0] }}">{{ row[0] }}</option>
+                    {% endfor %}
+                </select>
+                <span id="courseError" class="error"></span>
+            </div>
+            
+
+            <!-- Year Level Selection -->
+            <div class="form-group">
+                <label for="yearlevel">Year Level:</label>
+                <select name="yearlevel" id="yearlevel" class="form-control" required>
+                    <option value="">Select your Year Level</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <span id="yearlevelError" class="error"></span>
+            </div>
 
             <!-- Gender Selection -->
             <div class="form-group">
                 <label>Gender:</label>
                 <div class="form-check">
-                    <input type="radio" name="gender" id="male" value="Male" class="form-check-input">
+                    <input type="radio" name="gender" id="male" value="Male" class="form-check-input" required>
                     <label class="form-check-label" for="male">Male</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" name="gender" id="female" value="Female" class="form-check-input">
+                    <input type="radio" name="gender" id="female" value="Female" class="form-check-input" required>
                     <label class="form-check-label" for="female">Female</label>
                 </div>
+                <span id="genderError" class="error"></span>
             </div>
 
             <!-- Submit Button -->
-			<a href="/home">
-				<button type="submit" class="btn btn-warning">Submit</button>
-			</a>
+            <button type="submit" class="btn btn-warning" onclick="return validateForm();">Submit</button>
         </form>
     </div>
+    
 {% endblock %}

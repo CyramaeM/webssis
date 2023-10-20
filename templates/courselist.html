@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class="container">
@@ -7,7 +7,7 @@
             <div class="form-group" style="margin-top: 10px;">
                 <select class="form-control" id="contentSelector">
                     <option value="student">STUDENT</option>
-                    <option value="courses">COURSES</option>
+                    <option value="courses" selected>COURSES</option>
                     <option value="college">COLLEGE</option>
                 </select>
             </div>
@@ -19,6 +19,40 @@
         </div>
     </div>
 </div>
+
+<div id="coursesContent" style="display: none;">
+    <table class="table">		  
+        <thead>			
+            <tr>			  
+                <th>Course Code</th>			  
+                <th>Course Name</th>			  
+                <th>College</th>   
+            </tr>		  
+        </thead>		  
+        <tbody>			
+            <tr>
+                {% for course in course %}			    
+                <td>{{ course[0] }}</td>
+                <td>{{ course[1] }}</td>
+                <td>{{ course[2] }}</td>
+                <td><button class="btn btn-danger" data-target="#deleteModal">
+                    <a href="/delete_course/{{ course[0] }}" style="color: white;">
+                        DELETE
+                    </a>
+                </button>
+                    <button class="btn btn-danger" data-target="#editModal" style="background-color:aquamarine">
+                        <a href="/edit_course/{{ course[0] }}" style="color: white;">
+                        EDIT
+                    </a>
+                    </button>
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>		
+    </table>
+</div>
+
 
 <div id="studentContent">
     <table class="table">		  
@@ -62,38 +96,6 @@
     </table>
 </div>
 
-<div id="coursesContent" style="display: none;">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-                <th>Course Code</th>			  
-                <th>Course Name</th>			  
-                <th>College</th>   
-            </tr>		  
-        </thead>		  
-        <tbody>			
-            <tr>
-                {% for course in course %}			    
-                <td>{{ course[0] }}</td>
-                <td>{{ course[1] }}</td>
-                <td>{{ course[2] }}</td>
-                <td><button class="btn btn-danger" data-target="#deleteModal">
-                    <a href="/delete_course/{{ course[0] }}" style="color: white;">
-                        DELETE
-                    </a>
-                </button>
-                    <button class="btn btn-danger" data-target="#editModal" style="background-color:aquamarine">
-                        <a href="/edit_course/{{ course[0] }}" style="color: white;">
-                        EDIT
-                    </a>
-                    </button>
-                </td>
-                
-            </tr>
-            {% endfor %}
-        </tbody>		
-    </table>
-</div>
 
 <div id="collegeContent" style="display: none;">
     <table class="table">		  

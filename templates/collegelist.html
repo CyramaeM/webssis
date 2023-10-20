@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-
+{% extends "index.html" %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -8,94 +7,19 @@
                 <select class="form-control" id="contentSelector">
                     <option value="student">STUDENT</option>
                     <option value="courses">COURSES</option>
-                    <option value="college">COLLEGE</option>
+                    <option value="college" selected>COLLEGE</option>
                 </select>
             </div>
         </div>
         <div class="col-md-6">
-            <a href="/student" id="addButton">
+            <a href="/college" id="addButton">
                 <button class="btn btn-danger"  data-target="#editModal" style="background-color: aquamarine; margin-top: 10px;">Add</button>
             </a>
         </div>
     </div>
 </div>
 
-<div id="studentContent">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-    
-                <th>ID number</th>			  
-                <th>First Name</th>			  
-                <th>Last Name</th>
-                <th>Gender</th>	
-                <th>Course</th>
-                <th>Year Level</th>
-                <th></th>
-                        
-            </tr>		  
-        </thead>		  
-        <tbody>			
-            <tr>
-                {% for student in student %}			    
-                <td>{{ student[0] }}</td>
-                <td>{{ student[1] }}</td>
-                <td>{{ student[2] }}</td>
-                <td>{{ student[3] }}</td>
-                <td>{{ student[5] }}</td>
-                <td>{{ student[4] }}</td>
-                <td><button class="btn btn-danger"  data-target="#deleteModal">
-                    <a href="/delete_student/{{student[0]}}" style="color: white;">
-                        DELETE
-                    </a>
-                </button>
-                    <button class="btn btn-danger"  data-target="#editModal" style="background-color:aquamarine">
-                        <a href="/edit_student/{{ student[0] }}" style="color: white;">
-                            EDIT
-                        </a>
-                        
-                    </button>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>		
-    </table>
-</div>
-
-<div id="coursesContent" style="display: none;">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-                <th>Course Code</th>			  
-                <th>Course Name</th>			  
-                <th>College</th>   
-            </tr>		  
-        </thead>		  
-        <tbody>			
-            <tr>
-                {% for course in course %}			    
-                <td>{{ course[0] }}</td>
-                <td>{{ course[1] }}</td>
-                <td>{{ course[2] }}</td>
-                <td><button class="btn btn-danger" data-target="#deleteModal">
-                    <a href="/delete_course/{{ course[0] }}" style="color: white;">
-                        DELETE
-                    </a>
-                </button>
-                    <button class="btn btn-danger" data-target="#editModal" style="background-color:aquamarine">
-                        <a href="/edit_course/{{ course[0] }}" style="color: white;">
-                        EDIT
-                    </a>
-                    </button>
-                </td>
-                
-            </tr>
-            {% endfor %}
-        </tbody>		
-    </table>
-</div>
-
-<div id="collegeContent" style="display: none;">
+<div id="collegeContent">
     <table class="table">		  
         <thead>			
             <tr>			  
@@ -157,6 +81,4 @@
         });
     });
 </script>
-
-
 {% endblock %}

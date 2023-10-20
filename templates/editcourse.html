@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="container">
+        <!-- Edit Course Form -->
+        <form action="/edit_course/{{ course[0] }}" method="POST">
+            <!-- Course Name -->
+            <div class="form-group">
+                <label for="new_course_name">New Course Name:</label>
+                <input type="text" name="new_course_name" id="new_course_name" value="{{ course[1] }}" class="form-control" required>
+            </div>
+
+            <!-- Course Code -->
+            <div class="form-group">
+                <label for="new_course_code">New Course Code:</label>
+                <input type="text" name="new_course_code" id="new_course_code" value="{{ course[0] }}" class="form-control" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-warning">Update Course</button>
+        </form>
+    </div>
+{% endblock %}

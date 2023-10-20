@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="container">
+        <!-- Edit College Form -->
+        <form action="/edit_college/{{ college[1] }}" method="POST">
+            <!-- College Name -->
+            <div class="form-group">
+                <label for="new_college_name">New College Name:</label>
+                <input type="text" name="new_college_name" id="new_college_name" value="{{ college[0] }}" class="form-control" required>
+            </div>
+
+            <!-- College Code -->
+            <div class="form-group">
+                <label for="new_college_code">New College Code:</label>
+                <input type="text" name="new_college_code" id="new_college_code" value="{{ college[1] }}" class="form-control" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-warning">Update College</button>
+        </form>
+    </div>
+{% endblock %}

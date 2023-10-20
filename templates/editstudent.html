@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="container">
+        <!-- Edit Student Form -->
+        <form action="/edit_student/{{ student[0] }}" method="POST">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="new_fname">New First Name:</label>
+                <input type="text" name="new_fname" id="new_fname" value="{{ student[1] }}" class="form-control" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="new_lname">New Last Name:</label>
+                <input type="text" name ="new_lname" id="new_lname" value="{{ student[2] }}" class="form-control" required>
+            </div>
+
+            <!-- Course Selection -->
+            <div class="form-group">
+                <label for="new_course">New Course:</label>
+                <select name="new_course" id="new_course" class="form-control" required>
+                    <option value="">Select a Course</option>
+                    {% for row in course %}
+                        <option value="{{ row[0] }}"
+                        {% if row[0] == student[5] %}
+                            selected
+                        {% endif %}>
+                            {{ row[0] }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+
+            <!-- Year Level -->
+            <div class="form-group">
+                <label for="new_yearlevel">New Year Level:</label>
+                <input type="text" name="new_yearlevel" id="new_yearlevel" value="{{ student[4] }}" class="form-control" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="new_gender">New Gender:</label>
+                <input type="text" name="new_gender" id="new_gender" value="{{ student[3] }}" class="form-control" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-warning">Update Student</button>
+        </form>
+    </div>
+{% endblock %}

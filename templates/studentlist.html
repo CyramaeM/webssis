@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class="container">
@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="form-group" style="margin-top: 10px;">
                 <select class="form-control" id="contentSelector">
-                    <option value="student">STUDENT</option>
+                    <option value="student" selected>STUDENT</option>
                     <option value="courses">COURSES</option>
                     <option value="college">COLLEGE</option>
                 </select>
@@ -19,25 +19,23 @@
         </div>
     </div>
 </div>
-
 <div id="studentContent">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-    
-                <th>ID number</th>			  
-                <th>First Name</th>			  
+    <table class="table">          
+        <thead>            
+            <tr>              
+                <th>ID number</th>              
+                <th>First Name</th>              
                 <th>Last Name</th>
-                <th>Gender</th>	
+                <th>Gender</th>    
                 <th>Course</th>
                 <th>Year Level</th>
                 <th></th>
                         
-            </tr>		  
-        </thead>		  
-        <tbody>			
+            </tr>          
+        </thead>          
+        <tbody>            
             <tr>
-                {% for student in student %}			    
+                {% for student in student %}               
                 <td>{{ student[0] }}</td>
                 <td>{{ student[1] }}</td>
                 <td>{{ student[2] }}</td>
@@ -58,22 +56,22 @@
                 </td>
             </tr>
             {% endfor %}
-        </tbody>		
+        </tbody>       
     </table>
 </div>
 
 <div id="coursesContent" style="display: none;">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-                <th>Course Code</th>			  
-                <th>Course Name</th>			  
-                <th>College</th>   
-            </tr>		  
-        </thead>		  
-        <tbody>			
+    <table class="table">          
+        <thead>            
+            <tr>              
+                <th>Course Code</th>              
+                <th>Course Name</th>              
+                <th>College</th>
+            </tr>          
+        </thead>          
+        <tbody>            
             <tr>
-                {% for course in course %}			    
+                {% for course in courses %}               
                 <td>{{ course[0] }}</td>
                 <td>{{ course[1] }}</td>
                 <td>{{ course[2] }}</td>
@@ -84,29 +82,27 @@
                 </button>
                     <button class="btn btn-danger" data-target="#editModal" style="background-color:aquamarine">
                         <a href="/edit_course/{{ course[0] }}" style="color: white;">
-                        EDIT
-                    </a>
+                            EDIT
+                        </a>
                     </button>
                 </td>
-                
             </tr>
             {% endfor %}
-        </tbody>		
+        </tbody>       
     </table>
 </div>
 
 <div id="collegeContent" style="display: none;">
-    <table class="table">		  
-        <thead>			
-            <tr>			  
-    
-                <th>College code</th>			  
-                <th>College Name</th>			  
-            </tr>		  
-        </thead>		  
-        <tbody>			
+    <table class="table">          
+        <thead>            
+            <tr>              
+                <th>College code</th>              
+                <th>College Name</th>
+            </tr>          
+        </thead>          
+        <tbody>            
             <tr>
-                {% for college in college %}			    
+                {% for college in colleges %}               
                 <td>{{ college[1] }}</td>
                 <td>{{ college[0] }}</td>
                 <td><button class="btn btn-danger">
@@ -114,17 +110,16 @@
                         DELETE
                     </a>
                 </button>
-                    <button class="btn btn-danger"  data-target="#editModal" style="background-color:aquamarine">
+                    <button class="btn btn-danger" data-target="#editModal" style="background-color:aquamarine">
                         <a href="/edit_college/{{ college[1] }}" style="color: white;">
                             EDIT
                         </a>
-                        
                     </button>
                 </td>
             </tr>
             {% endfor %}
-        </tbody>		
-    </table> 
+        </tbody>       
+    </table>
 </div>
 
 <script>
@@ -139,7 +134,6 @@
         });
     });
 </script>
-
 
 <script>
     $(document).ready(function() {
@@ -157,6 +151,4 @@
         });
     });
 </script>
-
-
 {% endblock %}
