@@ -1,170 +1,85 @@
-<!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        
-    <!-- Start: injected by Adguard -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+{% extends "sign-in.html" %}
 
-
-    <!-- End: injected by Adguard -->
-    <link rel="icon" href="../../../../favicon.ico">
-
-        <title>STUDENT INFORMATION SYSTEMS</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="../../css/editor.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-       <link href="carousel.css" rel="stylesheet">
-    </head>
-    <body>
-        <!--<nav aria-label="Page navigation example" style="border: 0px dashed rgb(66, 133, 244);">	-->  	
-        </nav>
-        <header">
-        <nav class="navbar navbar-expand-md navbar-dark " style="background-color: aqua;">
-            <a class="navbar-brand" href="#">Student Information System</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    
-                </li>
-                <li class="nav-item">
-                   
-                </li>
-                <li class="nav-item">
-            
-                </li>
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            </div>
-        </nav>
-        </header>
-
-        
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="../../js/vendor/popper.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
-    
-
-      <!--  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="background-color: aquamarine; display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
-            <defs>
-                <style type="text/css">
-            </style>
-            </defs>
-            <text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
-        </svg>
-        <div class="btn-group" role="group" aria-label="Basic example" style="">
-            <button type="button" class="btn btn-secondary" style="background-color: aquamarine;">log out</button>
-            <button type="button" class="btn btn-secondary">Новый</button> <button type="button" class="btn btn-secondary">В работе</button>
-            <button type="button" class="btn btn-secondary">Заблокированы</button><button type="button" class="btn btn-secondary">Готовый</button>
-            <button type="button" class="btn btn-secondary">Архивированный</button></div><table class="table" style="">		  
-                <thead>					  
-
-                </thead>		  		
-            -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group" style="margin-top: 10px;">
-                        <select class="form-control">
-                            <option value="value1">STUDENT</option>
-                            <option value="value2">COURSES</option>
-                            <option value="value3">COLLEGE</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color: aquamarine;margin-top: 10px;">Add</button>
-                </div>
-            </div>
-            
-            
-            <nav aria-label="Page navigation example" style="">	  	
-            </nav>
-            <table class="table" style="">		  
-                <thead>			
-                    <tr>			  
-		  
-                        <th>ID number</th>			  
-                        <th>First Name</th>			  
-                        <th>Last Name</th>
-                        <th>Gender</th>	
-                        <th>Course</th>
-                        <th>Year Level</th>
-                        <th></th>
-                        		
-                    </tr>		  
-                </thead>		  
-                <tbody>			
-                    <tr>			    
-                        <td>1</td>			  
-                        <td>Иванов</td>			  
-                        <td>Иван</td>
-                        <td>Иванович</td>
-                        <td>Активен</td>
-                        <td>01.03.2020</td>	
-                        <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-                        </td>
-                    </tr>
-                    <tr>			    
-                        <td>2</td>			  
-                        <td>Иванов</td>			  
-                        <td>Иван</td>
-                        <td>Иванович</td>
-                        <td>Активен</td>
-                        <td>01.03.2020</td>	
-                        <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-                        </td>		
-                    </tr>
-                    <tr>			    
-                            <td>3</td>			  
-                            <td>Иванов</td>			  
-                            <td>Иван</td>
-                            <td>Иванович</td>
-                            <td>Активен</td>
-                            <td>01.03.2020</td>	
-                            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-                            </td>		
-                        </tr>
-	  
-                </tbody>		
-            </table>
-               <!-- <nav aria-label="Page navigation example" style="">	  	
-                </nav><nav aria-label="Page navigation example" style="">	  
-                    <ul class="pagination">		
-                        <li class="page-item">
-                            <a class="page-link" href="#">Previous</a>
-                        </li>		
-                            <li class="page-item"><a class="page-link" href="#">1</a>
-                            </li>		
-                            <li class="page-item"><a class="page-link" href="#">2</a>
-                            </li>		
-                            <li class="page-item"><a class="page-link" href="#">3</a>
-                            </li>		
-                            <li class="page-item"><a class="page-link" href="#">Next</a>
-                            </li>	  
-                        </ul>	
-                    </nav>-->
-                    
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group" style="margin-top: 10px;">
+            <select class="form-control">
+                <option value="value1">STUDENT</option>
+                <option value="value2">COURSES</option>
+                <option value="value3">COLLEGE</option>
+            </select>
         </div>
-    </body>
-</html>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color: aquamarine;margin-top: 10px;">Add</button>
+    </div>
+</div>
+<div class="container">
+	<div class="row">
+        <div class="span12">
+            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                <div class="input-append span12">
+                    <input type="text" class="search-query" placeholder="Search">
+                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
+	</div>
+</div>
+
+
+<nav aria-label="Page navigation example" style="">	  	
+</nav>
+<table class="table" style="">		  
+    <thead>			
+        <tr>			  
+
+            <th>ID number</th>			  
+            <th>First Name</th>			  
+            <th>Last Name</th>
+            <th>Gender</th>	
+            <th>Course</th>
+            <th>Year Level</th>
+            <th></th>
+                    
+        </tr>		  
+    </thead>		  
+    <tbody>			
+        <tr>			    
+            <td>1</td>			  
+            <td>Иванов</td>			  
+            <td>Иван</td>
+            <td>Иванович</td>
+            <td>Активен</td>
+            <td>01.03.2020</td>	
+            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+            </td>
+        </tr>
+        <tr>			    
+            <td>2</td>			  
+            <td>Иванов</td>			  
+            <td>Иван</td>
+            <td>Иванович</td>
+            <td>Активен</td>
+            <td>01.03.2020</td>	
+            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+            </td>		
+        </tr>
+        <tr>			    
+                <td>3</td>			  
+                <td>Иванов</td>			  
+                <td>Иван</td>
+                <td>Иванович</td>
+                <td>Активен</td>
+                <td>01.03.2020</td>	
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+                </td>		
+            </tr>
+
+    </tbody>		
+</table>
+{% endblock %}
