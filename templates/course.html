@@ -1,0 +1,30 @@
+{% extends "sign-in.html" %}
+
+{% block content %}
+<nav aria-label="Page navigation example" style="">	  	
+</nav>
+<table class="table" style="">		  
+    <thead>			
+        <tr>			  
+
+            <th>Course code</th>			  
+            <th>Course Name</th>
+            <th>College</th>			  
+ 
+                    
+        </tr>		  
+    </thead>		  
+    <tbody>			
+        <tr>
+            {% for course in course %}			    
+            <td>{{ course[0] }}</td>
+            <td>{{ course[1] }}</td>
+            <td>{{ course[2] }}</td>
+            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+            </td>
+            {% endfor %}
+        </tr>
+    </tbody>		
+</table>
+{% endblock %}

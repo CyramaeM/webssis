@@ -1,85 +1,123 @@
 {% extends "sign-in.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group" style="margin-top: 10px;">
-            <select class="form-control">
-                <option value="value1">STUDENT</option>
-                <option value="value2">COURSES</option>
-                <option value="value3">COLLEGE</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color: aquamarine;margin-top: 10px;">Add</button>
-    </div>
-</div>
 <div class="container">
-	<div class="row">
-        <div class="span12">
-            <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                <div class="input-append span12">
-                    <input type="text" class="search-query" placeholder="Search">
-                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </div>
-            </form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group" style="margin-top: 10px;">
+                <select class="form-control" id="contentSelector">
+                    <option value="student">STUDENT</option>
+                    <option value="courses">COURSES</option>
+                    <option value="college">COLLEGE</option>
+                </select>
+            </div>
         </div>
-	</div>
+        <div class="col-md-6">
+            <a href="/add student">
+                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color: aquamarine; margin-top: 10px;">Add</button>
+            </a>
+        </div>
+    </div>
 </div>
 
-
-<nav aria-label="Page navigation example" style="">	  	
-</nav>
-<table class="table" style="">		  
-    <thead>			
-        <tr>			  
-
-            <th>ID number</th>			  
-            <th>First Name</th>			  
-            <th>Last Name</th>
-            <th>Gender</th>	
-            <th>Course</th>
-            <th>Year Level</th>
-            <th></th>
-                    
-        </tr>		  
-    </thead>		  
-    <tbody>			
-        <tr>			    
-            <td>1</td>			  
-            <td>Иванов</td>			  
-            <td>Иван</td>
-            <td>Иванович</td>
-            <td>Активен</td>
-            <td>01.03.2020</td>	
-            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-            </td>
-        </tr>
-        <tr>			    
-            <td>2</td>			  
-            <td>Иванов</td>			  
-            <td>Иван</td>
-            <td>Иванович</td>
-            <td>Активен</td>
-            <td>01.03.2020</td>	
-            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-            </td>		
-        </tr>
-        <tr>			    
-                <td>3</td>			  
-                <td>Иванов</td>			  
-                <td>Иван</td>
-                <td>Иванович</td>
-                <td>Активен</td>
-                <td>01.03.2020</td>	
+<div id="studentContent">
+    <table class="table">		  
+        <thead>			
+            <tr>			  
+    
+                <th>ID number</th>			  
+                <th>First Name</th>			  
+                <th>Last Name</th>
+                <th>Gender</th>	
+                <th>Course</th>
+                <th>Year Level</th>
+                <th></th>
+                        
+            </tr>		  
+        </thead>		  
+        <tbody>			
+            <tr>
+                {% for student in student %}			    
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>{{ student[3] }}</td>
+                <td>{{ student[5] }}</td>
+                <td>{{ student[4] }}</td>
                 <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                     <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
-                </td>		
+                </td>
             </tr>
+            {% endfor %}
+        </tbody>		
+    </table>
+</div>
 
-    </tbody>		
-</table>
+<div id="coursesContent" style="display: none;">
+    <table class="table" style="">		  
+        <thead>			
+            <tr>			  
+                <th>Course Code</th>			  
+                <th>Course Name</th>			  
+                <th>College</th>   
+            </tr>		  
+        </thead>		  
+        <tbody>			
+            <tr>
+                {% for course in course %}			    
+                <td>{{ course[0] }}</td>
+                <td>{{ course[1] }}</td>
+                <td>{{ course[2] }}</td>
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>		
+    </table>
+</div>
+
+<div id="collegeContent" style="display: none;">
+    <table class="table" style="">		  
+        <thead>			
+            <tr>			  
+    
+                <th>College code</th>			  
+                <th>College Name</th>			  
+            </tr>		  
+        </thead>		  
+        <tbody>			
+            <tr>
+                {% for college in college %}			    
+                <td>{{ college[0] }}</td>
+                <td>{{ college[1] }}</td>
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#editModal" style="background-color:aquamarine">Edit</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>		
+    </table> 
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Function to show content based on selected option
+        $('#contentSelector').change(function() {
+            var selectedOption = $(this).val();
+            // Hide all content sections
+            $('#studentContent, #coursesContent, #collegeContent').hide();
+            // Show the selected content section
+            $('#' + selectedOption + 'Content').show();
+        });
+    });
+</script>
+
+
+<div id="studentContent" style="display: block; margin-top:110px ;">
+    
+</div>
+
+
 {% endblock %}

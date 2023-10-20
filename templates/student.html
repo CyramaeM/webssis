@@ -1,91 +1,58 @@
-{% extend  %}
+{% extends "index.html" %}
+{% block content %}
+    <div class="container">
+        <header class="heading">Registration Form</header>
+        <hr>
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="static/css/student.css" rel="stylesheet">
+        <!-- Registration Form -->
+        <form id="registrationForm" action="/submit-registration" method="POST">
+            <!-- ID Number -->
+            <div class="form-group">
+                <label for="stu_id">ID Number:</label>
+                <input type="text" name="stu_id" id="stu_id" placeholder="Enter your ID number" class="form-control">
+            </div>
 
-<head>
-     <meta charset="UTF-8">
-     <title>Registration Form</title>
-     	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
- <div class="container">
- <!---heading---->
-     <header class="heading"> Registration-Form</header><hr></hr>
-	<!---Form starting----> 
-	<div class="row ">
-	 <!--- For Name---->
-         <div class="col-sm-12">
-             <div class="row">
-			     <div class="col-xs-4">
-          	         <label class="ID">ID number :</label> </div>
-		         <div class="col-xs-8">
-		             <input type="text" name="stu_id" id="stu_id" placeholder="Enter your ID number" class="form-control ">
-             </div>
-		      </div>
-		 </div>
-         <div class="col-sm-12">
-		     <div class="row">
-			     <div class="col-xs-4">
-                     <label class="firstname">first Name :</label></div>
-				<div class ="col-xs-8">	 
-		             <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control">
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control">
+            </div>
+
+            <!-- Course Selection -->
+            <div class="form-group">
+				<label for="course">Course:</label>
+				<select name="course" id="course" class="form-control">
+					<option value="">Select your Course</option>
+					{% for course in course %}
+						<option value="{{ course[0] }}">{{ course[0] }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			
+
+            <!-- Gender Selection -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="form-check">
+                    <input type="radio" name="gender" id="male" value="Male" class="form-check-input">
+                    <label class="form-check-label" for="male">Male</label>
                 </div>
-		     </div>
-		 </div>
-     <!-----For lst name---->
-		 <div class="col-sm-12">
-		     <div class="row">
-			     <div class="col-xs-4">
-		             <label class="lastname" >last name:</label></div>
-			     <div class="col-xs-8"	>	 
-			          <input type="text" name="lname"  id="lname" placeholder="Enter your Last name" class="form-control" >
-		         </div>
-		     </div>
-		 </div>
-	 <!-----For course---->
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-xs-4">
-                    <label class="Course">Course:</label>
-                </div>
-                <div class="col-xs-8">
-                    <select name="Course" id="Course" class="form-control">
-                        <option value="">Select your Course</option>
-                        <option value="College A">College A</option>
-                        <option value="College B">College B</option>
-                        <option value="College C">College C</option>
-                        <!-- Add more options as needed -->
-                    </select>
+                <div class="form-check">
+                    <input type="radio" name="gender" id="female" value="Female" class="form-check-input">
+                    <label class="form-check-label" for="female">Female</label>
                 </div>
             </div>
-        </div>
-		  
-     <!-----------For gender-------->
-         <div class="col-sm-12">
-		     <div class ="row">
-                 <div class="col-xs-4 ">
-			       <label class="gender">Gender:</label>
-				 </div>
-			 
-			     <div class="col-xs-4 male">	 
-				     <input type="radio" name="gender"  id="gender" value="boy">Male</input>
-				 </div>
-				 
-				 <div class="col-xs-4 female">
-				     <input type="radio"  name="gender" id="gender" value="girl" >Female</input>
-			     </div>
-			
-		  	 </div>
-		     <div class="col-sm-12">
-		         <div class="btn btn-warning">Submit</div>
-		   </div>
-		 </div>
-	 </div>	 
-		 		 
-		 
-</div>
 
-</body>		
+            <!-- Submit Button -->
+			<a href="/home">
+				<button type="submit" class="btn btn-warning">Submit</button>
+			</a>
+        </form>
+    </div>
+{% endblock %}
