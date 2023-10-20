@@ -3,8 +3,6 @@ from flask import Flask, render_template, request,redirect, url_for,flash
 from config import DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, SECRET_KEY
 import mysql.connector
 #from flask_wtf.csrf import CSRFProtect
-
-
 app = Flask(__name__)
 app.secret_key="BLUE"
 app.config['MYSQL_HOST'] = "localhost"
@@ -330,12 +328,6 @@ def edit_course(id):
         except Exception as e:
             flash(f"Error retrieving course: {str(e)}", "error")
             return redirect(url_for('courselist'))
-        
-        
-        
-
-
-
 @app.route('/edit_college/<string:id>', methods=['GET', 'POST'])
 def edit_college(id):
     if request.method == 'POST':
